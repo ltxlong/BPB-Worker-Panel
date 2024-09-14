@@ -274,8 +274,8 @@ export default {
                         });
 
                     default:
-                        // return new Response('Not found', { status: 404 });
-                        url.hostname = 'www.speedtest.net';
+                        return new Response('Not found', { status: 404 });
+                        url.hostname = 'www.visa.com.sg';
                         url.protocol = 'https:';
                         request = new Request(url, request);
                         return await fetch(request);
@@ -3375,7 +3375,7 @@ async function getNormalConfigs(env, hostName, client) {
     const resolved = await resolveDNS(hostName);
     const Addresses = [
         hostName,
-        'www.speedtest.net',
+        'www.visa.com.sg',
         ...resolved.ipv4,
         ...resolved.ipv6.map((ip) => `[${ip}]`),
         ...(cleanIPs ? cleanIPs.split(',') : [])
@@ -3451,7 +3451,7 @@ async function getFragmentConfigs(env, hostName, client) {
     const resolved = await resolveDNS(hostName);
     const Addresses = [
         hostName,
-        "www.speedtest.net",
+        "www.visa.com.sg",
         ...resolved.ipv4,
         ...resolved.ipv6.map((ip) => `[${ip}]`),
         ...(cleanIPs ? cleanIPs.split(",") : [])
@@ -3799,7 +3799,7 @@ async function getClashConfig (env, hostName, isWarp) {
     const resolved = await resolveDNS(hostName);
     const Addresses = [
         hostName,
-        "www.speedtest.net",
+        "www.visa.com.sg",
         ...resolved.ipv4,
         ...resolved.ipv6,
         ...(cleanIPs ? cleanIPs.split(",") : [])
@@ -4234,7 +4234,7 @@ async function getSingboxConfig (env, hostName, client, warpType) {
     const resolved = await resolveDNS(hostName);
     const Addresses = [
         hostName,
-        "www.speedtest.net",
+        "www.visa.com.sg",
         ...resolved.ipv4,
         ...resolved.ipv6.map((ip) => `[${ip}]`),
         ...(cleanIPs ? cleanIPs.split(",") : [])
